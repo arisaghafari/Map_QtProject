@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>SecondWindow.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images.png</file>
