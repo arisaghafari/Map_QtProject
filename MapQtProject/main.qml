@@ -11,36 +11,16 @@ Window {
     Plugin {
         id: mapPlugin
         name: "osm" // "mapboxgl", "esri", ...
-        // specify plugin parameters if necessary
-        // PluginParameter {
-        //     name:
-        //     value:
-        // }
     }
-
-    /*Map {
-        id:map
-        anchors.fill: parent
-        plugin: mapPlugin
-        center: QtPositioning.coordinate()
-        zoomLevel: 14
-    }
-    MouseArea{
-        anchors.fill: parent
-        onClicked: console.log('latitude = '+ (map.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude),
-                                       'longitude = '+ (map.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude));
-    }*/
     Map {
         id: map
         anchors.fill: parent
-        //plugin: Plugin {name: "osm"}
         plugin: mapPlugin
-        //zoomLevel: 14
-        zoomLevel: (maximumZoomLevel - minimumZoomLevel)/2
+        zoomLevel: 14
+        //zoomLevel: (maximumZoomLevel - minimumZoomLevel)/2
         center {
-            // The Qt Company in Oslo
-            latitude: 59.9485
-            longitude: 10.7686
+            latitude: 35.736415
+            longitude: 51.401520
         }
 
         MapQuickItem {
@@ -64,5 +44,27 @@ Window {
             onClicked: console.log('latitude = '+ (map.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude),
                                            'longitude = '+ (map.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude));
         }
+
+        Column{
+            id: cols
+            anchors.fill: parent
+            anchors.margins: 5
+            spacing: 3
+            Rectangle{
+                border.color: "gray"
+                height: 25
+                border.width: 1
+                id : frame
+                width: parent.width
+
+                TextInput{
+                    id : textPlain
+                    anchors.fill: parent
+                    anchors.margins: 4
+                }
+            }
+        }
+
+
     }
 }
