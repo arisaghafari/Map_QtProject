@@ -43,7 +43,7 @@ Window {
         id: map
         anchors.fill: parent
         plugin: mapPlugin
-        zoomLevel: 14
+        //zoomLevel: 14
         //zoomLevel: (maximumZoomLevel - minimumZoomLevel)/2
         center {
             latitude: 35.736415
@@ -69,6 +69,22 @@ Window {
             onPressed: {
                 marker.coordinate = map.toCoordinate(Qt.point(mouse.x,mouse.y))
                 createSecondWindow(mouse.x,mouse.y)
+            }
+
+        }
+        Column{
+            id: cols
+            anchors.fill: parent
+            anchors.margins: 5
+            Button{
+                id :zoomIn
+                text: "Zoom In"
+                onClicked: map.zoomLevel = map.zoomLevel + 0.5
+            }
+            Button{
+                id :zoomOut
+                text: "Zoom Out"
+                onClicked: map.zoomLevel = map.zoomLevel - 0.5
             }
         }
     }
