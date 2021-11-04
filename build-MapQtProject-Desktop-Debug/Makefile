@@ -370,6 +370,7 @@ compiler_rcc_clean:
 qrc_qml.cpp: ../MapQtProject/qml.qrc \
 		/usr/lib/qt5/bin/rcc \
 		../MapQtProject/SecondWindow.qml \
+		../MapQtProject/ThirdWindow.qml \
 		../MapQtProject/main.qml \
 		../MapQtProject/images.png
 	/usr/lib/qt5/bin/rcc -name qml ../MapQtProject/qml.qrc -o qrc_qml.cpp

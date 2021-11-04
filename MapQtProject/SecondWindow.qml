@@ -3,8 +3,8 @@ import QtQuick.Controls 1.4
 
 Rectangle{
     id : textRectangle
-    color: "#dedede"
-    border.color : "gray"
+    color: "#f0f0f0"
+    border.color : "#dedede"
     radius : 5
     visible: true
 
@@ -26,7 +26,7 @@ Rectangle{
         anchors.topMargin: 50
         spacing: 3
         Rectangle{
-            border.color: "gray"
+            border.color: "#dedede"
             height: parent.height - 35
             border.width: 1
             id : frame
@@ -39,9 +39,10 @@ Rectangle{
             }
         }
         Button{
+            //text.color: "red"
             id :submit
             text: "submit"
-            anchors.horizontalCenter: parent.Center
+            //anchors.horizontalCenter: parent.Center
         }
     }
 

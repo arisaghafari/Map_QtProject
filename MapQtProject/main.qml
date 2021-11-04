@@ -25,10 +25,13 @@ Window {
         if(secondWindow == null){
             //onsole.log("create component")
             var component = Qt.createComponent("SecondWindow.qml")
+            //"x":x + 20 , "y":y - 135,
+
             secondWindow = component.createObject(mouseArea, {"x":x + 20 , "y":y - 135, "width": 250, "height":135} )
             //console.log(secondWindow.children[0])
             secondWindow.children[0].text = qsTr("latitude  :   " + map.toCoordinate(Qt.point(x,y)).latitude)
             secondWindow.children[1].text = qsTr("longitude  :   " + map.toCoordinate(Qt.point(x,y)).longitude)
+            //secondWindow.coordinate = map.toCoordinate(Qt.point(x,y))
         }
     }
     function destroySecondWindow(){
@@ -65,8 +68,9 @@ Window {
             anchors.fill: parent
             onPressed: {
                 marker.coordinate = map.toCoordinate(Qt.point(mouse.x,mouse.y))
+                createSecondWindow(mouse.x,mouse.y)
             }
-            onClicked: createSecondWindow(mouseX, mouseY)
+            //onClicked:
         }
     }
 }
