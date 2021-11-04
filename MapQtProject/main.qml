@@ -70,7 +70,6 @@ Window {
                 marker.coordinate = map.toCoordinate(Qt.point(mouse.x,mouse.y))
                 createSecondWindow(mouse.x,mouse.y)
             }
-            //onClicked:
         }
     }
 }
