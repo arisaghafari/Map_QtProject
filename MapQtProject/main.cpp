@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "backend.h"
+#include "tablemodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,8 +9,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "BackEnd");
-    //qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "TextComponent");
+    qmlRegisterType<TableModel>("TableModel", 1, 0, "TableModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

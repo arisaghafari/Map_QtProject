@@ -52,13 +52,13 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../MapQtProject/backend.cpp \
-		../MapQtProject/main.cpp qrc_qml.cpp \
-		moc_backend.cpp
-OBJECTS       = backend.o \
-		main.o \
+SOURCES       = ../MapQtProject/main.cpp \
+		../MapQtProject/tablemodel.cpp qrc_qml.cpp \
+		moc_tablemodel.cpp
+OBJECTS       = main.o \
+		tablemodel.o \
 		qrc_qml.o \
-		moc_backend.o
+		moc_tablemodel.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -141,8 +141,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../MapQtProject/MapQtProject.pro ../MapQtProject/backend.h ../MapQtProject/backend.cpp \
-		../MapQtProject/main.cpp
+		../MapQtProject/MapQtProject.pro ../MapQtProject/tablemodel.h ../MapQtProject/main.cpp \
+		../MapQtProject/tablemodel.cpp
 QMAKE_TARGET  = MapQtProject
 DESTDIR       = 
 TARGET        = MapQtProject
@@ -339,8 +339,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../MapQtProject/qml.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../MapQtProject/backend.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../MapQtProject/backend.cpp ../MapQtProject/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../MapQtProject/tablemodel.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../MapQtProject/main.cpp ../MapQtProject/tablemodel.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -370,6 +370,7 @@ compiler_rcc_clean:
 qrc_qml.cpp: ../MapQtProject/qml.qrc \
 		/usr/lib/qt5/bin/rcc \
 		../MapQtProject/SecondWindow.qml \
+		../MapQtProject/ThirdWindow.qml \
 		../MapQtProject/main.qml \
 		../MapQtProject/images.png
 	/usr/lib/qt5/bin/rcc -name qml ../MapQtProject/qml.qrc -o qrc_qml.cpp
@@ -380,13 +381,13 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_backend.cpp
+compiler_moc_header_make_all: moc_tablemodel.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_backend.cpp
-moc_backend.cpp: ../MapQtProject/backend.h \
+	-$(DEL_FILE) moc_tablemodel.cpp
+moc_tablemodel.cpp: ../MapQtProject/tablemodel.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include '/home/arisa/Desktop/galaxy/Map Qt Project/Map_QtProject/build-MapQtProject-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/arisa/Desktop/galaxy/Map Qt Project/Map_QtProject/MapQtProject' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MapQtProject/backend.h -o moc_backend.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include '/home/arisa/Desktop/galaxy/Map Qt Project/Map_QtProject/build-MapQtProject-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/arisa/Desktop/galaxy/Map Qt Project/Map_QtProject/MapQtProject' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MapQtProject/tablemodel.h -o moc_tablemodel.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -402,17 +403,17 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
-backend.o: ../MapQtProject/backend.cpp ../MapQtProject/backend.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o backend.o ../MapQtProject/backend.cpp
-
-main.o: ../MapQtProject/main.cpp ../MapQtProject/backend.h
+main.o: ../MapQtProject/main.cpp ../MapQtProject/tablemodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../MapQtProject/main.cpp
+
+tablemodel.o: ../MapQtProject/tablemodel.cpp ../MapQtProject/tablemodel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tablemodel.o ../MapQtProject/tablemodel.cpp
 
 qrc_qml.o: qrc_qml.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qml.o qrc_qml.cpp
 
-moc_backend.o: moc_backend.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_backend.o moc_backend.cpp
+moc_tablemodel.o: moc_tablemodel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_tablemodel.o moc_tablemodel.cpp
 
 ####### Install
 
