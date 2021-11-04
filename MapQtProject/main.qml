@@ -6,6 +6,7 @@ import QtPositioning 5.6
 import QtQuick.Dialogs 1.1
 import QtQuick.Controls 1.4
 
+
 Window {
     width: Qt.platform.os == "android" ? Screen.width : 512
     height: Qt.platform.os == "android" ? Screen.height : 512
@@ -22,9 +23,12 @@ Window {
             destroySecondWindow()
         }
         if(secondWindow == null){
-            console.log("create component")
+            //onsole.log("create component")
             var component = Qt.createComponent("SecondWindow.qml")
-            secondWindow = component.createObject(mouseArea, {"x":x + 20 , "y":y - 100, "width": 100, "height":100} )
+            secondWindow = component.createObject(mouseArea, {"x":x + 20 , "y":y - 135, "width": 250, "height":135} )
+            //console.log(secondWindow.children[0])
+            secondWindow.children[0].text = qsTr("latitude  :   " + map.toCoordinate(Qt.point(x,y)).latitude)
+            secondWindow.children[1].text = qsTr("longitude  :   " + map.toCoordinate(Qt.point(x,y)).longitude)
         }
     }
     function destroySecondWindow(){
@@ -66,3 +70,5 @@ Window {
         }
     }
 }
+
+
