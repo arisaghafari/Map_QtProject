@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "BackEnd");
+    //qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "TextComponent");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

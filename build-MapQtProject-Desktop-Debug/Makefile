@@ -369,6 +369,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../MapQtProject/qml.qrc \
 		/usr/lib/qt5/bin/rcc \
+		../MapQtProject/SecondWindow.qml \
 		../MapQtProject/main.qml \
 		../MapQtProject/images.png
 	/usr/lib/qt5/bin/rcc -name qml ../MapQtProject/qml.qrc -o qrc_qml.cpp
@@ -404,7 +405,7 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 backend.o: ../MapQtProject/backend.cpp ../MapQtProject/backend.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o backend.o ../MapQtProject/backend.cpp
 
-main.o: ../MapQtProject/main.cpp 
+main.o: ../MapQtProject/main.cpp ../MapQtProject/backend.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../MapQtProject/main.cpp
 
 qrc_qml.o: qrc_qml.cpp 
