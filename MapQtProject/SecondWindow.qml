@@ -17,13 +17,14 @@ Rectangle{
         id : lonTextPlain
         anchors.fill: parent
         anchors.margins: 4
-        anchors.topMargin: 25
+        anchors.topMargin: 40
     }
     Column{
         id: cols
         anchors.fill: parent
         anchors.margins: 5
-        anchors.topMargin: 50
+        anchors.topMargin: 80
+        anchors.bottomMargin: 25
         spacing: 3
         Rectangle{
             border.color: "#dedede"

@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import QtQuick.Window 2.12
+//import QtQuick.Window 2.12
 
 import QtLocation 5.6
 import QtPositioning 5.6
@@ -7,7 +7,7 @@ import QtQuick.Dialogs 1.1
 import QtQuick.Controls 1.4
 
 
-Window {
+Rectangle {
     width: Qt.platform.os == "android" ? Screen.width : 512
     height: Qt.platform.os == "android" ? Screen.height : 512
     visible: true
@@ -27,7 +27,7 @@ Window {
             var component = Qt.createComponent("SecondWindow.qml")
             //"x":x + 20 , "y":y - 135,
 
-            secondWindow = component.createObject(mouseArea, {"x":x + 20 , "y":y - 135, "width": 250, "height":135} )
+            secondWindow = component.createObject(mouseArea, {"x":x + 20 , "y":y - 320, "width": 500, "height":300} )
             //console.log(secondWindow.children[0])
             secondWindow.children[0].text = qsTr("latitude  :   " + map.toCoordinate(Qt.point(x,y)).latitude)
             secondWindow.children[1].text = qsTr("longitude  :   " + map.toCoordinate(Qt.point(x,y)).longitude)
@@ -54,7 +54,7 @@ Window {
             id:marker
             sourceItem: Image{
                 id: image
-                source: "/images/images.png"
+                source: "qrc:/images/images.png"
                 width: 70
                 height: 45
             }

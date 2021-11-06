@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>SecondWindow.qml</file>
-        <file>ThirdWindow.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images.png</file>

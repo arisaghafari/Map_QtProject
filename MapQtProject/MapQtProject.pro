@@ -1,4 +1,7 @@
-QT += quick
+QT += core gui qml quick
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+#lessThan(QT_MAJOR_VERSION, 5.5):QT += declarative
 
 CONFIG += c++11
 
@@ -15,7 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        tablemodel.cpp
+        mainwindow.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,11 +35,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    tablemodel.h
+    mainwindow.h
 
 CONFIG += qmltypes
 QML_IMPORT_NAME = io.qt.examples.backend
 QML_IMPORT_MAJOR_VERSION = 1
+
+FORMS += \
+    mainwindow.ui
+
+#QT += declarative
+QT += quickwidgets
+
 
 
 
