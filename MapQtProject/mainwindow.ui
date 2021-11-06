@@ -18,10 +18,32 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QQuickWidget" name="quickWidget">
-        <property name="resizeMode">
-         <enum>QQuickWidget::SizeRootObjectToView</enum>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="tabPosition">
+         <enum>QTabWidget::East</enum>
         </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="map">
+         <attribute name="title">
+          <string>Map</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QQuickWidget" name="quickWidget">
+            <property name="resizeMode">
+             <enum>QQuickWidget::SizeRootObjectToView</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="locations">
+         <attribute name="title">
+          <string>Locations</string>
+         </attribute>
+        </widget>
        </widget>
       </item>
      </layout>

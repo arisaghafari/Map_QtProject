@@ -16,6 +16,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -27,7 +28,11 @@ public:
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
+    QTabWidget *tabWidget;
+    QWidget *map;
+    QHBoxLayout *horizontalLayout_2;
     QQuickWidget *quickWidget;
+    QWidget *locations;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,11 +47,25 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        quickWidget = new QQuickWidget(centralwidget);
+        tabWidget = new QTabWidget(centralwidget);
+        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setTabPosition(QTabWidget::East);
+        map = new QWidget();
+        map->setObjectName(QString::fromUtf8("map"));
+        horizontalLayout_2 = new QHBoxLayout(map);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        quickWidget = new QQuickWidget(map);
         quickWidget->setObjectName(QString::fromUtf8("quickWidget"));
         quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
-        verticalLayout->addWidget(quickWidget);
+        horizontalLayout_2->addWidget(quickWidget);
+
+        tabWidget->addTab(map, QString());
+        locations = new QWidget();
+        locations->setObjectName(QString::fromUtf8("locations"));
+        tabWidget->addTab(locations, QString());
+
+        verticalLayout->addWidget(tabWidget);
 
 
         horizontalLayout->addLayout(verticalLayout);
@@ -62,12 +81,17 @@ public:
 
         retranslateUi(MainWindow);
 
+        tabWidget->setCurrentIndex(1);
+
+
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(map), QApplication::translate("MainWindow", "Map", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(locations), QApplication::translate("MainWindow", "Locations", nullptr));
     } // retranslateUi
 
 };
