@@ -1,15 +1,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "tablemodel.h"
+#include "mainwindow.h"
+//#include "tablemodel.h"
 
-int main(int argc, char *argv[])
+/*int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    /QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    qmlRegisterType<TableModel>("TableModel", 1, 0, "TableModel");
+    //qmlRegisterType<TableModel>("TableModel", 1, 0, "TableModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
@@ -22,4 +23,14 @@ int main(int argc, char *argv[])
 
 
     return app.exec();
+}
+*/
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
