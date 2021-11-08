@@ -8,6 +8,8 @@ import QtQuick.Controls 1.4
 
 
 Rectangle {
+    signal zoomClicked()
+    id: main
     width: Qt.platform.os == "android" ? Screen.width : 512
     height: Qt.platform.os == "android" ? Screen.height : 512
     visible: true
@@ -40,6 +42,7 @@ Rectangle {
     }
 
     Map {
+        //signal zoomClicked()
         id: map
         anchors.fill: parent
         plugin: mapPlugin
@@ -78,8 +81,13 @@ Rectangle {
             anchors.margins: 5
             Button{
                 id :zoomIn
-                text: "Zoom In"
-                onClicked: map.zoomLevel = map.zoomLevel + 0.5
+                text: "Zoom In    "
+                //onClicked: map.zoomLevel = map.zoomLevel + 0.5
+                onClicked: {
+
+                    main.zoomClicked()
+                    //console.log("map.zoomClicked")
+                }
             }
             Button{
                 id :zoomOut

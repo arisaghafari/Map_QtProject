@@ -15,6 +15,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -33,6 +34,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QQuickWidget *quickWidget;
     QWidget *locations;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,6 +65,9 @@ public:
         tabWidget->addTab(map, QString());
         locations = new QWidget();
         locations->setObjectName(QString::fromUtf8("locations"));
+        pushButton = new QPushButton(locations);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(140, 400, 371, 71));
         tabWidget->addTab(locations, QString());
 
         verticalLayout->addWidget(tabWidget);
@@ -81,7 +86,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -91,6 +96,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(map), QApplication::translate("MainWindow", "Map", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "connect to database", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(locations), QApplication::translate("MainWindow", "Locations", nullptr));
     } // retranslateUi
 

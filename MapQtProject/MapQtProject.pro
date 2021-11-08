@@ -47,6 +47,7 @@ FORMS += \
 #QT += declarative
 QT += quickwidgets
 
+QT += sql
 
 
 

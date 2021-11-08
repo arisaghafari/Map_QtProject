@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 1.4
 
 Rectangle{
+    signal submitClicked()
     id : textRectangle
     color: "#f0f0f0"
     border.color : "#dedede"
@@ -44,6 +45,7 @@ Rectangle{
             id :submit
             text: "submit"
             //anchors.horizontalCenter: parent.Center
+            onClicked: textRectangle.submitClicked()
         }
     }
 
