@@ -8,22 +8,22 @@
 #include <QtQuick>
 #include <QDebug>
 
-void MainWindow::addTableElement()
-{
-    qDebug("hi");
-    QMessageBox::information(this, "Connection", "hi");
-}
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    ui->quickWidget->setSource(QUrl::fromLocalFile(":/main.qml"));
-    QQuickView view(QUrl::fromLocalFile((":/main.qml")));
-    QObject *item = view.rootObject();
-    QObject::connect(item, SIGNAL(zoomClicked()), this, SLOT(addTableElement()));
+    QQuickView* view = new QQuickView();
+    QWidget *container = QWidget::createWindowContainer(view, this);
+    view->setSource(QUrl::fromLocalFile((":/main.qml")));
+    if (view)
+        item = view->rootObject();
+
+    QObject::connect(item, SIGNAL(submitClicked()), this, SLOT(addTableElement()));
+//    ui->quickWidget->setSource(QUrl::fromLocalFile(":/main.qml"));
+//    setCentralWidget(container);
+    ui->vBox->addWidget(container);
 }
 
 MainWindow::~MainWindow()
@@ -47,4 +47,9 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
+void MainWindow::addTableElement()
+{
+    qDebug() << "!!!!!!!!!!!!!!!!!!!";
+    // QMessageBox::information(this, "Connection", "hi");
+}
 

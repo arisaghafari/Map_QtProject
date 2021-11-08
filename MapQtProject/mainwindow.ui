@@ -31,11 +31,7 @@
          </attribute>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QQuickWidget" name="quickWidget">
-            <property name="resizeMode">
-             <enum>QQuickWidget::SizeRootObjectToView</enum>
-            </property>
-           </widget>
+           <layout class="QVBoxLayout" name="vBox"/>
           </item>
          </layout>
         </widget>
@@ -69,19 +65,12 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>39</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QQuickWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">QtQuickWidgets/QQuickWidget</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
