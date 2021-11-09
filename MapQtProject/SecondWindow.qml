@@ -45,7 +45,10 @@ Rectangle{
             id :submit
             text: "submit"
             //anchors.horizontalCenter: parent.Center
-            onClicked: submitClicked()
+            onClicked: {
+                console.log(latTextPlain.text)
+                submitClicked("lat", lonTextPlain.text, textPlain.text)
+            }
         }
     }
 
