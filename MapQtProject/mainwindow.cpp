@@ -7,6 +7,7 @@
 #include <QQuickWidget>
 #include <QtQuick>
 #include <QDebug>
+#include "locationtable.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,10 +21,14 @@ MainWindow::MainWindow(QWidget *parent) :
     if (view)
         item = view->rootObject();
 
-    QObject::connect(item, SIGNAL(submitClicked()), this, SLOT(addTableElement()));
+    QObject::connect(item, SIGNAL(submitClicked(double, double, QString)), this, SLOT(addTableElement(double, double, QString)));
 //    ui->quickWidget->setSource(QUrl::fromLocalFile(":/main.qml"));
 //    setCentralWidget(container);
     ui->vBox->addWidget(container);
+    ui->tabWidget->removeTab(1);
+
+    connect(this, &MainWindow::addTableElementSignal, locationView, &locationTable::insertElement);
+
 }
 
 MainWindow::~MainWindow()
@@ -47,9 +52,16 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
-void MainWindow::addTableElement()
+void MainWindow::addTableElement(double lat, double lon, QString description)
 {
-    qDebug() << "!!!!!!!!!!!!!!!!!!!";
-    // QMessageBox::information(this, "Connection", "hi");
+    qDebug() << QString::number(lat);
+    if (!locationsViewExist){
+        ui->tabWidget->addTab(new locationTable, QString("Locations"));
+        locationsViewExist = true;
+    }
+    emit addTableElementSignal();
+   // QObject::connect(this, SIGNAL(addTableElement), locationView, SLOT())
+   //ui->tableWidget->setColumnCount(3);
+    //ui->tabWidget->setCurrentIndex(1)->;
 }
 
