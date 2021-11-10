@@ -20,6 +20,7 @@ public:
     ~MainWindow();
     bool locationsViewExist = false;
     locationTable* locationView = new locationTable();
+    QSqlDatabase db;
 
 signals:
     //void addTableElementSignal();

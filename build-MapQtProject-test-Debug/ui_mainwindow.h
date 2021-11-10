@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.8
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -91,9 +91,9 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(map), QApplication::translate("MainWindow", "Map", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(locations), QApplication::translate("MainWindow", "Locations", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(map), QCoreApplication::translate("MainWindow", "Map", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(locations), QCoreApplication::translate("MainWindow", "Locations", nullptr));
     } // retranslateUi
 
 };

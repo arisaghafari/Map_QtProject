@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'locationtable.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.8
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -51,8 +51,8 @@ public:
 
     void retranslateUi(QWidget *locationTable)
     {
-        locationTable->setWindowTitle(QApplication::translate("locationTable", "Form", nullptr));
-        pushButton->setText(QApplication::translate("locationTable", "PushButton", nullptr));
+        locationTable->setWindowTitle(QCoreApplication::translate("locationTable", "Form", nullptr));
+        pushButton->setText(QCoreApplication::translate("locationTable", "Load", nullptr));
     } // retranslateUi
 
 };
