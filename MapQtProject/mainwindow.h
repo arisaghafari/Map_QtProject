@@ -22,11 +22,10 @@ public:
     locationTable* locationView = new locationTable();
 
 signals:
-    void addTableElementSignal();
+    //void addTableElementSignal();
 
 private slots:
-    void on_pushButton_clicked();
-    void addTableElement(double, double, QString);
+    void addTableElement(QString, QString, QString);
 
 private:
     Ui::MainWindow *ui;

@@ -19,7 +19,6 @@ locationTable::locationTable(QWidget *parent) :
     ui(new Ui::locationTable)
 {
     ui->setupUi(this);
-    //ui->tableWidget->setColumnCount(3);
 }
 
 locationTable::~locationTable()
@@ -27,18 +26,3 @@ locationTable::~locationTable()
     delete ui;
 }
 
-void locationTable::insertElement()
-{
-    ui->tableWidget->setColumnCount(3);
-    //ui->tableWidget->insertRow(ui->tableWidget->rowCount());
-    //ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1,0,new QTableWidgetItem("ui->comboBox->currentText()"));
-    qDebug() << "hi";
-    ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 0, new QTableWidgetItem(QString("kheyli olaghi")));
-}
-
-void locationTable::on_pushButton_clicked()
-{
-    ui->tableWidget->insertRow(ui->tableWidget->rowCount());
-    ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1,0,new QTableWidgetItem("ui->comboBox->currentText()"));
-
-}

@@ -47,7 +47,7 @@ Rectangle{
             //anchors.horizontalCenter: parent.Center
             onClicked: {
                 console.log(latTextPlain.text)
-                submitClicked("lat", lonTextPlain.text, textPlain.text)
+                submitClicked(latTextPlain.text, lonTextPlain.text, textPlain.text)
             }
         }
     }
