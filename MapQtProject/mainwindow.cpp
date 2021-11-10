@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabWidget->removeTab(1);
 
     //database
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("127.0.0.1");
     db.setUserName("root");
     db.setPassword("");
