@@ -53,6 +53,8 @@ QT += quickwidgets
 QT += sql
 QT += widgets
 
+#LIBS += -llibmysql
+
 
 
 

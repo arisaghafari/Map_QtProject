@@ -258,6 +258,7 @@ DIST          = /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspe
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/qt_config.prf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/linux-g++/qmake.conf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/spec_post.prf \
+		../MapQtProject/.qmake.stash \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/exclusive_builds.prf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/toolchain.prf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/default_pre.prf \
@@ -488,6 +489,7 @@ Makefile: ../MapQtProject/MapQtProject.pro /home/arisa/Desktop/Qt5.15.2-20211024
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/qt_config.prf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/linux-g++/qmake.conf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/exclusive_builds.prf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/toolchain.prf \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/default_pre.prf \
@@ -706,6 +708,7 @@ Makefile: ../MapQtProject/MapQtProject.pro /home/arisa/Desktop/Qt5.15.2-20211024
 /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/qt_config.prf:
 /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/linux-g++/qmake.conf:
 /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/exclusive_builds.prf:
 /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/toolchain.prf:
 /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/mkspecs/features/default_pre.prf:
@@ -1722,6 +1725,44 @@ locationtable.o: ../MapQtProject/locationtable.cpp ../MapQtProject/locationtable
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qvector2d.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qtouchdevice.h \
 		ui_locationtable.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QVariant \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QApplication \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qapplication.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qcoreapplication.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qeventloop.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qdesktopwidget.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qguiapplication.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qinputmethod.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QHeaderView \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qheaderview.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractitemview.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractscrollarea.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qframe.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qabstractitemmodel.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qitemselectionmodel.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractitemdelegate.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qstyleoption.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractspinbox.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qvalidator.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qregularexpression.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qicon.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qslider.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractslider.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qstyle.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtabbar.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtabwidget.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qrubberband.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QPushButton \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qpushbutton.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractbutton.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QTableWidget \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtablewidget.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtableview.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QVBoxLayout \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qboxlayout.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qlayout.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qlayoutitem.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qgridlayout.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QDebug \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QMessageBox \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qmessagebox.h \
@@ -1729,7 +1770,6 @@ locationtable.o: ../MapQtProject/locationtable.cpp ../MapQtProject/locationtable
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QString \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QProgressBar \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qprogressbar.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qframe.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QLabel \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qlabel.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QLineEdit \
@@ -1740,36 +1780,17 @@ locationtable.o: ../MapQtProject/locationtable.cpp ../MapQtProject/locationtable
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qtextoption.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QTextEdit \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtextedit.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractscrollarea.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qtextdocument.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QTimer \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qtimer.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qbasictimer.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QRadioButton \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qradiobutton.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractbutton.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qicon.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QTimeEdit \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qdatetimeedit.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qdatetime.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qcalendar.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractspinbox.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qvalidator.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qregularexpression.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QTableWidgetItem \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtablewidget.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtableview.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractitemview.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qabstractitemmodel.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/qitemselectionmodel.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractitemdelegate.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qstyleoption.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qslider.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qabstractslider.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qstyle.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtabbar.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qtabwidget.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qrubberband.h
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QTableWidgetItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o locationtable.o ../MapQtProject/locationtable.cpp
 
 main.o: ../MapQtProject/main.cpp /home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/QGuiApplication \
@@ -2343,6 +2364,26 @@ mainwindow.o: ../MapQtProject/mainwindow.cpp ../MapQtProject/mainwindow.h \
 		../MapQtProject/locationtable.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QWidget \
 		ui_mainwindow.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QVariant \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QApplication \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qapplication.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qdesktopwidget.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qguiapplication.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qinputmethod.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QHBoxLayout \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qboxlayout.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qlayout.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qlayoutitem.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qgridlayout.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QMenuBar \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qmenubar.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qmenu.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qaction.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qactiongroup.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QStatusBar \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/qstatusbar.h \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QTabWidget \
+		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtWidgets/QVBoxLayout \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtQuick/QQuickView \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtQuick/qquickview.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtQuick/qquickwindow.h \
@@ -2411,8 +2452,6 @@ mainwindow.o: ../MapQtProject/mainwindow.cpp ../MapQtProject/mainwindow.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qdrag.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qgenericplugin.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qgenericpluginfactory.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qguiapplication.h \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qinputmethod.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qiconengine.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qiconengineplugin.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtGui/qimageiohandler.h \
@@ -2480,7 +2519,6 @@ mainwindow.o: ../MapQtProject/mainwindow.cpp ../MapQtProject/mainwindow.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtNetwork/qnetworkrequest.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QString \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QUrl \
-		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtCore/QVariant \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtNetwork/qabstractsocket.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtNetwork/qauthenticator.h \
 		/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/include/QtNetwork/qdnslookup.h \

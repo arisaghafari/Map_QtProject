@@ -48,11 +48,19 @@ void MainWindow::addTableElement(QString lat, QString lon, QString description)
         ui->tabWidget->addTab(new locationTable, QString("Locations"));
         locationsViewExist = true;
     }
+
+    if(QSqlDatabase::isDriverAvailable("QMYSQL")){
+        QMessageBox::information(this, "is available", "available");
+
     //write data in data base
-    if(db.open()){
-        QMessageBox::information(this, "Connection", "Database connected successfully");
+        if(db.open()){
+            QMessageBox::information(this, "Connection", "Database connected successfully");
+        }
+        else{
+            QMessageBox::information(this, "Not conncted", "Database is not connected");
+        }
     }
     else{
-        QMessageBox::information(this, "Not conncted", "Database is not connected");
+        QMessageBox::information(this, "is available", "is not available");
     }
 }
