@@ -24,6 +24,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(item, SIGNAL(submitClicked(QString, QString, QString)), this, SLOT(addTableElement(QString, QString, QString)));
     ui->vBox->addWidget(container);
     ui->tabWidget->removeTab(1);
+
+    //database
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("127.0.0.1");
+    db.setUserName("root");
+    db.setPassword("");
+    db.setDatabaseName("locations");
+
 }
 
 MainWindow::~MainWindow()
@@ -40,22 +48,11 @@ void MainWindow::addTableElement(QString lat, QString lon, QString description)
         ui->tabWidget->addTab(new locationTable, QString("Locations"));
         locationsViewExist = true;
     }
-    //emit addTableElementSignal();
-}
-/*void MainWindow::on_pushButton_clicked()
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("127.0.0.1");
-    db.setUserName("root");
-    db.setPassword("");
-    db.setDatabaseName("locations");
-
+    //write data in data base
     if(db.open()){
         QMessageBox::information(this, "Connection", "Database connected successfully");
     }
     else{
         QMessageBox::information(this, "Not conncted", "Database is not connected");
     }
-}*/
-
-
+}
