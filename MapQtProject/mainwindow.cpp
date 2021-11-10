@@ -21,14 +21,9 @@ MainWindow::MainWindow(QWidget *parent) :
     if (view)
         item = view->rootObject();
 
-    QObject::connect(item, SIGNAL(submitClicked(double, double, QString)), this, SLOT(addTableElement(double, double, QString)));
-//    ui->quickWidget->setSource(QUrl::fromLocalFile(":/main.qml"));
-//    setCentralWidget(container);
+    QObject::connect(item, SIGNAL(submitClicked(QString, QString, QString)), this, SLOT(addTableElement(QString, QString, QString)));
     ui->vBox->addWidget(container);
     ui->tabWidget->removeTab(1);
-
-    connect(this, &MainWindow::addTableElementSignal, locationView, &locationTable::insertElement);
-
 }
 
 MainWindow::~MainWindow()
@@ -36,7 +31,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::addTableElement(QString lat, QString lon, QString description)
+{
+    qDebug() << lat;
+    qDebug() << lon;
+    qDebug() << description;
+    if (!locationsViewExist){
+        ui->tabWidget->addTab(new locationTable, QString("Locations"));
+        locationsViewExist = true;
+    }
+    //emit addTableElementSignal();
+}
+/*void MainWindow::on_pushButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("127.0.0.1");
@@ -50,18 +56,6 @@ void MainWindow::on_pushButton_clicked()
     else{
         QMessageBox::information(this, "Not conncted", "Database is not connected");
     }
-}
+}*/
 
-void MainWindow::addTableElement(double lat, double lon, QString description)
-{
-    qDebug() << QString::number(lat);
-    if (!locationsViewExist){
-        ui->tabWidget->addTab(new locationTable, QString("Locations"));
-        locationsViewExist = true;
-    }
-    emit addTableElementSignal();
-   // QObject::connect(this, SIGNAL(addTableElement), locationView, SLOT())
-   //ui->tableWidget->setColumnCount(3);
-    //ui->tabWidget->setCurrentIndex(1)->;
-}
 

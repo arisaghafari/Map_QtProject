@@ -7,7 +7,7 @@ import QtQuick.Dialogs 1.1
 import QtQuick.Controls 1.4
 
     Rectangle {
-        signal submitClicked(double lat, double lon, string description)
+        signal submitClicked(string lat, string lon, string description)
         width: Qt.platform.os == "android" ? Screen.width : 512
         height: Qt.platform.os == "android" ? Screen.height : 512
         visible: true
