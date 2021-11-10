@@ -26,3 +26,8 @@ locationTable::~locationTable()
     delete ui;
 }
 
+
+void locationTable::on_pushButton_clicked()
+{
+    //load data from database
+}

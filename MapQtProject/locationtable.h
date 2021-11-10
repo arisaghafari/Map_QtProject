@@ -15,6 +15,9 @@ public:
     explicit locationTable(QWidget *parent = nullptr);
     ~locationTable();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::locationTable *ui;
 };
