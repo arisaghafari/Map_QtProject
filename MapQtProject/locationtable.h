@@ -1,6 +1,7 @@
 #ifndef LOCATIONTABLE_H
 #define LOCATIONTABLE_H
-
+#include <QtSql>
+#include <QSqlDatabase>
 #include <QWidget>
 
 namespace Ui {
@@ -16,7 +17,7 @@ public:
     ~locationTable();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_load_button_clicked();
 
 private:
     Ui::locationTable *ui;

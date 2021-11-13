@@ -1,0 +1,24 @@
+{
+    "classes": [
+        {
+            "className": "locationTable",
+            "object": true,
+            "qualifiedClassName": "locationTable",
+            "slots": [
+                {
+                    "access": "private",
+                    "name": "on_load_button_clicked",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QWidget"
+                }
+            ]
+        }
+    ],
+    "inputFile": "locationtable.h",
+    "outputRevision": 67
+}

@@ -53,8 +53,10 @@ QT += quickwidgets
 QT += sql
 QT += widgets
 
+#LIBS += -L'/home/arisa/Desktop/Qt5.15.2-20211024T080546Z-001/Qt5.15.2/lib'
 #LIBS += -llibmysql
-
-
-
-
+LIBS += -lmysqlcppconn
+INCLUDEPATH += -I/usr/share/doc/libmysqlcppconn-dev
+LIBS        += -lGL
+#unix:LIBS += -lpq
+win32:LIBS += libpqdll.lib

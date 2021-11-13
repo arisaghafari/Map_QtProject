@@ -1,0 +1,35 @@
+{
+    "classes": [
+        {
+            "className": "MainWindow",
+            "object": true,
+            "qualifiedClassName": "MainWindow",
+            "slots": [
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        },
+                        {
+                            "type": "QString"
+                        },
+                        {
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "addTableElement",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QMainWindow"
+                }
+            ]
+        }
+    ],
+    "inputFile": "mainwindow.h",
+    "outputRevision": 67
+}

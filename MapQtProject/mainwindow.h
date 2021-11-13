@@ -21,6 +21,10 @@ public:
     bool locationsViewExist = false;
     locationTable* locationView = new locationTable();
     QSqlDatabase db;
+    void connClose();
+    bool connOpen();
+   // bool conn;
+   // QSqlQuery query;
 
 signals:
     //void addTableElementSignal();
