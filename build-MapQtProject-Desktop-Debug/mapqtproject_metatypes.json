@@ -1,0 +1,61 @@
+[
+    {
+        "classes": [
+            {
+                "className": "locationTable",
+                "object": true,
+                "qualifiedClassName": "locationTable",
+                "slots": [
+                    {
+                        "access": "private",
+                        "name": "on_load_button_clicked",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QWidget"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "locationtable.h",
+        "outputRevision": 67
+    },
+    {
+        "classes": [
+            {
+                "className": "MainWindow",
+                "object": true,
+                "qualifiedClassName": "MainWindow",
+                "slots": [
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "type": "QString"
+                            },
+                            {
+                                "type": "QString"
+                            },
+                            {
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "addTableElement",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QMainWindow"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "mainwindow.h",
+        "outputRevision": 67
+    }
+]

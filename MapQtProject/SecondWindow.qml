@@ -46,7 +46,7 @@ Rectangle{
             text: "submit"
             //anchors.horizontalCenter: parent.Center
             onClicked: {
-                console.log(latTextPlain.text)
+                //console.log(latTextPlain.text)
                 submitClicked(latTextPlain.text, lonTextPlain.text, textPlain.text)
             }
         }
