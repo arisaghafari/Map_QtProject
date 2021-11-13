@@ -19,7 +19,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         locationtable.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        mysqlpass.cpp
 
 RESOURCES += qml.qrc
 
@@ -37,7 +38,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     locationtable.h \
-    mainwindow.h
+    mainwindow.h \
+    mysqlpass.h
 
 CONFIG += qmltypes
 QML_IMPORT_NAME = io.qt.examples.backend
@@ -45,7 +47,8 @@ QML_IMPORT_MAJOR_VERSION = 1
 
 FORMS += \
     locationtable.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    mysqlpass.ui
 
 #QT += declarative
 QT += quickwidgets

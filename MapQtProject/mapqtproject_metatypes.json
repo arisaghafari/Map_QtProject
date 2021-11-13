@@ -57,5 +57,29 @@
         ],
         "inputFile": "mainwindow.h",
         "outputRevision": 67
+    },
+    {
+        "classes": [
+            {
+                "className": "mysqlPass",
+                "object": true,
+                "qualifiedClassName": "mysqlPass",
+                "slots": [
+                    {
+                        "access": "private",
+                        "name": "on_pushButton_clicked",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QDialog"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "mysqlpass.h",
+        "outputRevision": 67
     }
 ]
