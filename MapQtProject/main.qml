@@ -80,7 +80,7 @@ import QtQuick.Controls 1.4
                 anchors.margins: 5
                 Button{
                     id :zoomIn
-                    text: "Zoom In    " 
+                    text: "Zoom In   "
                     onClicked: {
                         //zoomClicked()
                         map.zoomLevel = map.zoomLevel + 0.5

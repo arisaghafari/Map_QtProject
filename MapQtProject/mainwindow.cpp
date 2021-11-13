@@ -32,8 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
     db.setUserName("root");
     db.setPassword("Asd123");
     db.setDatabaseName("locations");
-    //conn = connOpen();
-    bool conn = db.open();
+
+    db.open();
     QSqlQuery query(db);
     query.prepare("CREATE TABLE IF NOT EXISTS location(latitude VARCHAR(50) NOT NULL, longitude VARCHAR(50) NOT NULL, description VARCHAR(200))");
     if(query.exec())
@@ -41,47 +41,11 @@ MainWindow::MainWindow(QWidget *parent) :
     else
         qDebug() << "table could not create: " << query.lastError();
 }
-//Asd123
 
 MainWindow::~MainWindow()
 {
-    //connClose();
     delete ui;
 }
-
-/*void MainWindow::connClose()
-{
-    //qDebug() << "connClose....";
-    db.close();
-    db.removeDatabase(db.connectionName());
-}
-bool MainWindow::connOpen()
-{
-    //Please wait
-    //salam ostad
-    //ostad man chon natoonestam be mysql vasl konam az sqlit estefade kardam ta projaro tamoom knam va hamoon bakhshe mysql bemoone
-    //alan ba sqlite kamel kar mikone
-    //Ok, please change sqlite to mysql, I see
-    db=QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/arisa/location.db");
-
-    if(db.open())
-    {
-        QSqlQuery query;
-        query.prepare("create table location(lat text, lon text, description text)");
-        if(query.exec())
-            qDebug() << "created ...";
-        else
-            qDebug() << "table could not create: " << query.lastError();
-        return true;
-    }
-    else if(!db.open())
-    {
-        QMessageBox::information(this, "Not conncted", query.lastError().text());
-        //qDebug() << "couldn't open....";
-        return false;
-    }
-}*/
 void MainWindow::addTableElement(QString lat, QString lon, QString description)
 {
     if (!locationsViewExist){
@@ -90,11 +54,8 @@ void MainWindow::addTableElement(QString lat, QString lon, QString description)
     }
     if(db.isOpen()){
 
-        //qDebug() << "conn ...";
         QSqlQuery queryAdd(db);
         queryAdd.prepare("INSERT INTO location (latitude, longitude, description) VALUES (:lat, :lon, :description);");
-        //queryAdd.prepare("SELECT * FROM location");
-
         queryAdd.bindValue(":lat", lat);
         queryAdd.bindValue(":lon", lon);
         queryAdd.bindValue(":description", description);
@@ -102,11 +63,9 @@ void MainWindow::addTableElement(QString lat, QString lon, QString description)
             qDebug() << "success !!!";
         else
             qDebug() << "record could not add: " << queryAdd.lastError();
-        //QMessageBox::information(this, "connected", "connect!!");
     }
     else{
         QMessageBox::information(this, "Not conncted", "query.lastError().text()");
     }
-    //connClose();
 }
 

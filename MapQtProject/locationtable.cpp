@@ -21,8 +21,6 @@ locationTable::~locationTable()
 
 void locationTable::on_load_button_clicked()
 {
-    //db=QSqlDatabase::addDatabase("QSQLITE");
-    //db.setDatabaseName("/home/arisa/location.db");
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "loadConnection");
     db.setHostName("127.0.0.1");
@@ -38,13 +36,9 @@ void locationTable::on_load_button_clicked()
         query->exec();
         model->setQuery(*query);
         ui->tableView->setModel(model);
-        //qDebug() << model->rowCount();
-        //qDebug() << "loaded...";
-
     }
     else
     {
         QMessageBox::information(this, "connection", "coulden't load data...");
-        //qDebug() << "couldn't open in load tab....";
     }
 }
