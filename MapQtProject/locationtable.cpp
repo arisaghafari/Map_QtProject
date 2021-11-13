@@ -21,10 +21,16 @@ locationTable::~locationTable()
 
 void locationTable::on_load_button_clicked()
 {
-    db=QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/arisa/location.db");
+    //db=QSqlDatabase::addDatabase("QSQLITE");
+    //db.setDatabaseName("/home/arisa/location.db");
 
-    if(db.open())
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "loadConnection");
+    db.setHostName("127.0.0.1");
+    db.setUserName("root");
+    db.setPassword("Asd123");
+    db.setDatabaseName("locations");
+    db.open();
+    if(db.isOpen())
     {
         QSqlQueryModel* model = new QSqlQueryModel();
         QSqlQuery* query = new QSqlQuery(db);
@@ -36,11 +42,9 @@ void locationTable::on_load_button_clicked()
         //qDebug() << "loaded...";
 
     }
-    else if(!db.open())
+    else
     {
         QMessageBox::information(this, "connection", "coulden't load data...");
         //qDebug() << "couldn't open in load tab....";
     }
-    db.close();
-    db.removeDatabase(db.connectionName());
 }
