@@ -7,11 +7,17 @@
             "slots": [
                 {
                     "access": "private",
-                    "name": "on_pushButton_clicked",
-                    "returnType": "void"
-                },
-                {
-                    "access": "private",
+                    "arguments": [
+                        {
+                            "type": "QString"
+                        },
+                        {
+                            "type": "QString"
+                        },
+                        {
+                            "type": "QString"
+                        }
+                    ],
                     "name": "addTableElement",
                     "returnType": "void"
                 }
