@@ -8,12 +8,13 @@
 #include <QtQuick>
 #include <QDebug>
 #include "locationtable.h"
-
+#include "mysqlpass.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    mysqlPass *mp = new mysqlPass();
     ui->setupUi(this);
 
     QQuickView* view = new QQuickView();
@@ -25,12 +26,24 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(item, SIGNAL(submitClicked(QString, QString, QString)), this, SLOT(addTableElement(QString, QString, QString)));
     ui->vBox->addWidget(container);
     ui->tabWidget->removeTab(1);
+    //database pass
 
-    //database
+    mp->show();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::setPassword(QString pass){
+    databasePass = pass;
+}
+void MainWindow::databaseSetup(QString Password){
     db = QSqlDatabase::addDatabase("QMYSQL", "myConnection");
     db.setHostName("127.0.0.1");
     db.setUserName("root");
-    db.setPassword("Asd123");
+    db.setPassword(Password);
     db.setDatabaseName("locations");
 
     db.open();
@@ -40,14 +53,14 @@ MainWindow::MainWindow(QWidget *parent) :
         qDebug() << "created ...";
     else
         qDebug() << "table could not create: " << query.lastError();
-}
 
-MainWindow::~MainWindow()
-{
-    delete ui;
 }
 void MainWindow::addTableElement(QString lat, QString lon, QString description)
 {
+    if (dbSetup){
+        databaseSetup(databasePass);
+        dbSetup = false;
+    }
     if (!locationsViewExist){
         ui->tabWidget->addTab(new locationTable, QString("Locations"));
         locationsViewExist = true;
